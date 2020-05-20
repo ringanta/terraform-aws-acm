@@ -17,6 +17,9 @@ resource "aws_acm_certificate" "this" {
 
   lifecycle {
     create_before_destroy = true
+    ignore_changes = [
+      subject_alternative_names,
+    ]
   }
 }
 
